@@ -1,11 +1,15 @@
-name: Hello Actions
+name: Simple GitHub Action
+
 on:
   push:
   pull_request:
 
 jobs:
-  hello:
+  run-simple-action:
     runs-on: ubuntu-latest
     steps:
-      - name: Afficher un message
-        run: echo "Hello from GitHub Actions"
+      - name: Checkout du code
+        uses: actions/checkout@v4
+      
+      - name: Exécuter une action d'affichage
+        run: echo "GitHub Actions est en marche "
